@@ -1,0 +1,404 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap');
+
+* {
+    font: 62.5% 'Nunito Sans', sans-serif;
+    box-sizing: border-box;
+}
+
+[data-theme='light'] {
+    /* (Light Mode Input) */
+    --Dark-Gray: hsl(0, 0%, 52%);
+    /* (Light Mode Text) */
+    --Very-Dark-Blue: hsl(200, 15%, 8%);
+    --SVG-white: #000000;
+    /* (Dark Mode Text) */
+    /* --White: hsl(0, 0%, 100%); */
+
+    /* (Light Mode Elements) */
+    --WhiteEl: hsl(0, 0%, 100%);
+    /* (Light Mode Background) */
+    --Very-Light-Gray: hsl(0, 0%, 98%);
+    --Light-Mode-Box-shadow: rgba(0, 0, 0, 0.1)
+}
+
+[data-theme='dark'] {
+    /* (dark Mode Input) */
+    --Dark-Gray: hsl(0, 0%, 87%);
+    /* (dark Mode Text) */
+    --Very-Dark-Blue: hsl(0, 0%, 100%);
+    --SVG-white: #ffffff;
+    /* (Dark Mode Text) */
+    /* --White: hsl(200, 15%, 8%); */
+    /* (dark Mode Elements) */
+    --WhiteEl: hsl(209, 23%, 22%);
+    /* (Dark Mode Background) */
+    --Very-Light-Gray: hsl(207, 26%, 17%);
+    --Light-Mode-Box-shadow: rgba(255, 255, 255, 0.1)
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        /* (Light Mode Input) */
+        --Dark-Gray: hsl(0, 0%, 52%);
+        /* (Light Mode Text) */
+        --Very-Dark-Blue: hsl(200, 15%, 8%);
+        --SVG-white: #000000;
+        /* (Dark Mode Text) */
+        /* --White: hsl(0, 0%, 100%); */
+
+        /* (Light Mode Elements) */
+        --WhiteEl: hsl(0, 0%, 100%);
+        /* (Light Mode Background) */
+        --Very-Light-Gray: hsl(0, 0%, 98%);
+        --Light-Mode-Box-shadow: rgba(0, 0, 0, 0.1);
+        --secondary: #000000;
+    }
+}
+
+
+.max__width {
+    max-width: 1296px;
+    margin: auto;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Nunito Sans', sans-serif;
+    background: var(--Very-Light-Gray);
+    transition: background 300ms ease-out;
+}
+
+header {
+    width: 100%;
+    padding: 24px 24px;
+    background: var(--WhiteEl);
+    box-shadow: 0 4px 4px 0px var(--Light-Mode-Box-shadow);
+    transition: background 300ms ease-out;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1340px;
+    margin: auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1 {
+    font-size: 2rem;
+    margin: 0;
+    color: var(--Very-Dark-Blue);
+    font-weight: 800;
+    transition: color 300ms ease-out;
+}
+
+.theme__switch p {
+    font-weight: 600;
+}
+
+.theme__switch {
+    display: flex;
+}
+
+.theme__switch svg {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+}
+
+.theme__switch svg[fill] {
+    fill: white;
+}
+
+p {
+    font-size: 1.6rem;
+    margin: 0;
+    font-weight: 400;
+    color: var(--Very-Dark-Blue);
+    transition: color 300ms ease-out;
+}
+
+main {
+    padding: 0 24px;
+    margin: 80px 0;
+}
+
+.filter__control {
+    display: flex;
+    /* height: 140px; */
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+input {
+    max-width: 440px;
+    width: 100%;
+    height: 48px;
+    border: none;
+    border-radius: 5px;
+    background: var(--WhiteEl) !important;
+    box-shadow: 0 0 4px 2px var(--Light-Mode-Box-shadow);
+    transition: background 300ms ease-out !important;
+}
+
+.input__field {
+    position: relative;
+    width: 100%;
+}
+
+.input__field svg {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    width: 24px;
+    height: 24px;
+}
+
+input:focus {
+    outline: none;
+}
+
+input::placeholder,
+input[type="text"] {
+    font-size: 1.4rem;
+    color: var(--Dark-Gray);
+    transition: color 300ms ease-out;
+}
+
+input[type="text"] {
+    padding: 0 0 0 48px;
+}
+
+.filterbar {
+    position: relative;
+    height: fit-content;
+    max-width: 200px;
+    width: 100%;
+    margin-top: 24px;
+}
+
+#filter {
+    display: flex;
+    align-items: center;
+    height: 48px;
+    border-radius: 5px;
+    background: var(--WhiteEl);
+    border: none;
+    transition: background 300ms ease-out;
+    box-shadow: 0 0 4px 2px var(--Light-Mode-Box-shadow);
+    padding: 0 16px;
+}
+
+#filter:focus {
+    outline: none;
+}
+
+#filter svg {
+    position: absolute;
+    right: 12px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    transition: transform 400ms;
+    will-change: transform;
+}
+
+svg[fill] {
+    color: var(--SVG-white);
+}
+
+#filter span {
+    display: block;
+    color: var(--Very-Dark-Blue);
+    transition: color 300ms ease-out;
+    font-weight: 600 !important;
+    transition: color 300ms ease-out;
+}
+
+span {
+    font-size: 1.4rem;
+    font-weight: 300;
+    color: var(--Dark-Gray);
+    transition: color 300ms ease-out;
+}
+
+.data span,
+.data p {
+    display: inline;
+}
+
+.filterbar ul {
+    /* display: none; */
+    position: absolute;
+    width: 100%;
+    height: 0px;
+    background: var(--WhiteEl);
+    padding: 16px 16px;
+    margin-top: 12px;
+    border-radius: 5px;
+    box-shadow: 0 0 4px 2px var(--Light-Mode-Box-shadow);
+    z-index: 99;
+    transition: background 300ms ease-out;
+    animation: dropdown 100ms ease-out;
+}
+
+.filterbar ul li {
+    color: var(--Very-Dark-Blue);
+    font-size: 1.4rem;
+    list-style-type: none;
+    padding: 4px 0;
+    cursor: pointer;
+    transition: color 300ms ease-out;
+}
+
+option {
+    position: absolute;
+    top: 0;
+    font-size: 1.4rem;
+    padding: 80px;
+}
+
+@media only screen and (min-width: 708px) {
+    .filter__control {
+        flex-wrap: nowrap;
+    }
+
+    .filterbar {
+        margin-top: 0;
+    }
+}
+
+
+
+.card__container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    row-gap: 80px;
+    column-gap: 80px;
+    margin-top: 48px;
+}
+
+.card__container .card__item:nth-child(6) .flag {
+    background: url("https://cdn.rawgit.com/hjnilsson/country-flags/master/svg/ax.svg") !important;
+}
+
+.card__item {
+    background: var(--WhiteEl);
+    border-radius: 4px;
+    box-shadow: 0 0 4px 2px var(--Light-Mode-Box-shadow);
+    /* transition: transform 300ms ease-out; */
+    transition: background 300ms ease-out,
+        transform 300ms ease-out;
+}
+
+.card__item:hover {
+    transform: scale(1.05);
+}
+
+.country__info {
+    padding: 24px 16px 56px 16px;
+}
+
+h2 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin: 0 0 16px 0;
+    color: var(--Very-Dark-Blue);
+    transition: color 300ms ease-out;
+}
+
+.flag {
+    width: 100%;
+    height: 172px;
+    border-radius: 5px 5px 0 0;
+    background-repeat: no-repeat;
+    background-position: 50% !important;
+    background-size: cover !important;
+    background: url("https://cdn.rawgit.com/hjnilsson/country-flags/master/svg/af.svg");
+}
+
+/* ----------------------------------------------
+ * Generated by Animista on 2020-11-18 13:18:17
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+/**
+ * ----------------------------------------
+ * animation scale-up-ver-top
+ * ----------------------------------------
+ */
+@-webkit-keyframes scale-up-ver-top {
+    0% {
+        -webkit-transform: scaleY(0.4);
+        transform: scaleY(0.4);
+        -webkit-transform-origin: 100% 0%;
+        transform-origin: 100% 0%;
+    }
+
+    100% {
+        -webkit-transform: scaleY(1);
+        transform: scaleY(1);
+        -webkit-transform-origin: 100% 0%;
+        transform-origin: 100% 0%;
+    }
+}
+
+@keyframes dropdown {
+    0% {
+        -webkit-transform: scaleY(0);
+        transform: scaleY(0);
+        -webkit-transform-origin: 100% 0%;
+        transform-origin: 100% 0%;
+    }
+
+    100% {
+        -webkit-transform: scaleY(1);
+        transform: scaleY(1);
+        -webkit-transform-origin: 100% 0%;
+        transform-origin: 100% 0%;
+    }
+}
+
+
+.theme_switch {
+    cursor: pointer;
+}
+
+.moon {
+    display: var(--moon-display);
+    stroke: var(--secondary);
+
+}
+
+.sun {
+    display: var(--sun-display);
+    stroke: var(--secondary);
+}
+
+#theme_toggle {
+    display: none;
+}
+
+@media (prefers-color-scheme: dak) {
+    :root {
+        /* (dark Mode Input) */
+        --Dark-Gray: hsl(0, 0%, 87%);
+        /* (dark Mode Text) */
+        --Very-Dark-Blue: hsl(0, 0%, 100%);
+        --SVG-white: #ffffff;
+        /* (Dark Mode Text) */
+        /* --White: hsl(200, 15%, 8%); */
+        /* (dark Mode Elements) */
+        --WhiteEl: hsl(209, 23%, 22%);
+        /* (Dark Mode Background) */
+        --Very-Light-Gray: hsl(207, 26%, 17%);
+        --Light-Mode-Box-shadow: rgba(255, 255, 255, 0.1)
+    }
+}
