@@ -5,8 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <link rel="manifest" href="manifest.json">
-    <link rel="icon" href="48X48.png">
+    <link rel="icon" href="page-icon.png">
     <title>REST Country API</title>
 </head>
 
@@ -28,11 +27,13 @@
                                     stroke-linecap="round" stroke-linejoin="round"  class="moon">
                                     <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
                                 </svg> -->
-                                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
-                                        d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                                <div class="svg__container">
+                                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
+                                            d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
                                     </svg>
+                                </div>
 
                                 <!-- sun svg -->
                                 <!-- <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="2"
@@ -74,10 +75,13 @@
                         <div class="filterbar">
                             <div class="filter" id="filter">
                                 <span class="region">Filter by Region</span>
-                                <svg id="dropdown" className="w-6 h-6" fill="none" stroke="currentColor"
-                                    viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
-                                        d="M5 10l7-7m0 0l7 7m-7-7v18" /></svg>
+                                <div class="svg__container">
+                                    <svg id="dropdown" class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd"
+                                            d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z"
+                                            clip-rule="evenodd"></path>
+                                    </svg>
+                                </div>
                             </div>
                             <div class="select__region">
 
@@ -111,8 +115,8 @@
                                 <p>Population: <span>27,657,145</span></p>
                                 <p>Region:<span> Asia</span></p>
                                 <p>Captial:<span> Kabul</span></p>
-                            </div> -->
-                        </div>
+                            </div>
+                        </div> -->
                 </main>
             </div>
         </div>
