@@ -4,6 +4,8 @@ const inputField = document.getElementById('input');
 let filterRegion = document.querySelector('.region');
 const changeRegionContainer = document.querySelector('.select__region');
 const cardContainer = document.querySelector('.card__container');
+const errorDiv = document.querySelector('.error-message-container');
+
 let state = false;
 let url;
 
@@ -26,7 +28,6 @@ for (let i = 0; i < list.length; i++) {
         fetchQuery();
     });
 }
-// DOMContentLoaded
 window.addEventListener('load', () => {
     const darkModeToggle = document.getElementById('theme_toggle');
 
@@ -106,6 +107,7 @@ function content(param) {
     while (cardContainer.firstChild) {
         cardContainer.removeChild(cardContainer.firstChild);
     }
+    errorDiv.style.display = 'none';
 
     param.forEach(element => {
         let countryName = element.name;
@@ -177,7 +179,6 @@ inputField.addEventListener('input', filterByCountry);
 function fetchOpertion() {
     let myFetch = fetch(url).then(response => {
         if (!response.ok) {
-            alert('404')
             throw new Error(`HTTP error status: ${response.status}`);
         } else {
             return response.json();
@@ -185,7 +186,7 @@ function fetchOpertion() {
     }).then(result => {
         return content(result)
     }).catch(err => {
-        // if (err.status)
+        errorDisplay();
         console.log(`There has been a error with your fetch operation: ${err.message} ${err.status}`);
     });
 
@@ -248,13 +249,10 @@ function fetchOpertion() {
 }
 
 
-// function errorDisplay () {
-//     while(cardContainer.firstChild) {
-//         cardContainer.removeChild(cardContainer.firstChild)
-//     }
+function errorDisplay() {
+    while (cardContainer.firstChild) {
+        cardContainer.removeChild(cardContainer.firstChild);
+    }
+    errorDiv.style.display = 'block';
 
-//     const errorDiv = document.createElement('div');
-//     const errorMessage = document.createElement('p')
-
-
-// }
+}
